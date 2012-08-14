@@ -1,68 +1,12 @@
+About
+=====
+This is the source code for Delorean Mail, a final project by students at Berkeley's School of  Information. Delorean Mail uses Context.IO and Google's AppEngine to go through your gmail and present an infographic highlighting interesting e-mails and statistics in your archive.
+
+If you need more information or wish to contribute, please contact info AT deloreanmail DOT com.
+
 Requirements
 ============
 * Python 2.7.x
-* pip
-* virtualenv (recommended)
-* virtualenvwrapper (recommended)
+* Context.IO API key
+* AppEngine account
 
-Installing Python 2.7.x
------------------------
-Python 2.7.x may already be installed on your system, especially if you're running a newer version of OS X. If not, you can download the right version of Python at http://www.python.org/download/.
-
-Installing pip
---------------
-Pip is a package manager that installs other Python packages. Download pip at http://pypi.python.org/pypi/pip#downloads. Once downloaded, decompress the archiveand run `python setup.py` inside the resulting folder.
-
-If that doesn't work, you may need to run the command with administrator privileges: `sudo python setup.py`
-
-Installing virtualenv
----------------------
-Virtualenv isn't required, but it will prevent different versions of various Python packages from different installations "polluting" each other. To install virtualenv, just run `pip install virtualenv` or, if that fails, `sudo pip install virtualenv`.
-
-Installing virtualenvwrapper
-----------------------------
-Virtualenvwrapper also isn't required, but it makes virtualenv a lot easier to use. Again, to install, just run `pip install virtualenvwrapper` or, if that fails, `sudo pip install virtualenvwrapper`.
-
-You also have to create some environment variables:
-
-    export WORKON_HOME=$HOME/.virtualenvs
-    export PIP_VIRTUALENV_BASE=$WORKON_HOME
-    source /usr/local/bin/virtualenvwrapper.sh
-
-You should also place the above code in your .profile or .bash\_login file, so virtualenvwrapper is initialized correctly whenever you log in.
-
-Getting Started
-===============
-To get started, you'll want to:
-
-* Clone this repository if you haven't done so already
-* Create a virtualenv (optional)
-* Run bootstrap.py
-* Run the development server
-* Running the test suite
-
-Cloning the Repository
-----------------------
-Run `git clone git@github.com:fongandrew/MASTA.git`
-
-Creating a virtualenv
----------------------
-If you installed virtualenvwrapper, just run `mkvirtualenv masta`. You can replace "masta" with any name you want. All python commands will use the virtualenv's libraries instead of the global Python packages.
-
-To deactivate virtualenv, just enter in `deactivate`. To reactivate a particular virtualenv (e.g. after you logged off and logged back in), run `workon masta`, again where "masta" can replaced with the name you chose earlier.
-
-See http://www.doughellmann.com/docs/virtualenvwrapper/ to learn more about using virtualenvwrapper.
-
-Running bootstrap.py
----------------------
-Run `./bootstrap.py` to install any additional Python libraries this app depends on. Whenever you pull updates from the git repository, you should run bootstrapy.py again to install newly added requirements.
-
-Running the development server
-------------------------------
-To launch the development server, run `gae/dev_appserver.py app/`. The site will be accessible at http://localhost:8080/. To shut down the server, press Ctrl+C.
-
-Running the test suite
-----------------------
-This app is designed to run on Google App Engine. Because App Engine has unique constraints, automated testing is run through the development server.
-
-To test, make sure the development server is running first. Next, run `./test.py` in the main project directory. This will scan all of the Python modules for tests and run them. If everything is running correctly, you'll get a message that there were no errors or failures.
