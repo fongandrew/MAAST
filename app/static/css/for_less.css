@@ -1,0 +1,164 @@
+@font-face{
+	font-family: "colaborate";
+	src: url('../fonts/Colaborate/ColabLig.otf');
+}
+
+@font-face{
+	font-family: "colaborate_bold";
+	src: url('../fonts/Colaborate/ColabBol.otf');
+}
+
+@font-face{
+	font-family: "circle_bold";
+	src: url('../fonts/cicle/Cicle Gordita.ttf');
+}
+
+@font-face{
+	font-family: "avenir";
+	src: url('../fonts/Avenir LT Std/AvenirLTStd-Book.otf');
+}
+
+body{
+  background: url(../img/plaster.png) repeat !important;
+/*  background: url(../img/plaster_lessyellow.png) repeat !important;*/
+}
+
+h2 {
+  font-family: "colaborate";
+  font-size: 20px;
+}
+
+.image_title{
+  margin-bottom: 5px;
+}
+.thumbnail{
+	-moz-box-shadow:    3px 3px 2px 3px #ccc;
+  -webkit-box-shadow: 3px 3px 2px 3px #ccc;
+  box-shadow:         3px 3px 2px 3px #ccc;	
+}
+
+.contact_image{
+	width: 96px;
+	height: 96px;
+	padding: 10px;
+}
+
+.contact_names h3{
+  font-family: "colaborate_bold";
+}
+
+.contact_names p{
+  font-family: "avenir";
+}
+
+.contact_subtitle{
+  font-family: "colaborate";
+  font-size: 30px;
+}
+.contact_frame{
+	width: 116px;
+	height: 116px;
+	margin: 0 auto;
+}
+
+/*.hero-unit{
+  background-color: transparent;  
+  background-image: url('../img/banners/index_banner.png');
+  background-repeat: no-repeat;
+  height: 150px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+*/
+
+.hero_index{
+  background-color: transparent;  
+  background-image: url('../img/banners/index_banner.png');
+  background-repeat: no-repeat;
+  height: 150px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.hero_contacts{
+  background-color: transparent;  
+  background-image: url('../img/banners/banner_contacts.png');
+  background-repeat: no-repeat;
+  height: 150px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.main_logo{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.contact_logo{
+  width: 200px;
+  margin-top: -40px;
+  margin-bottom: 40px;
+}
+
+.info_logo{
+  width: 200px;
+  margin-top: -40px;
+  margin-bottom: 40px;    
+  margin-left: -140px;
+}
+
+.contact_banner{
+  width: 660px;
+  height: 200px;
+  margin-left:55px;
+  margin-top:-10px;
+  margin-bottom: 25px;
+  background-image: url('../img/banners/banner_contacts.png');
+  background-repeat: no-repeat;
+}
+
+.button_box {
+  margin-left: -40px;
+  margin-top: 40px;
+}
+
+.contact_text {
+/*	position: relative;*/
+/*	margin: auto; */
+	text-align: center;
+}
+
+.tagline{
+  font-size: 60px;
+  font-family: "circle_bold";
+  color: none;
+  
+}
+
+.tagline_two{
+  font-size: 45px;
+  font-family: "colaborate";
+  font-color: none;
+  
+}
+
+.navbar .brand {
+display: none;
+}
+
+.main_banner{
+  margin-left: -20px;
+}
+
+.front_page_banner{
+	
+}
+
+.svg_front_banner{
+	z-index: 0;
+	position: absolute;
+	margin-top: 45px;
+	margin-bottom: 20px;
+}
+
+

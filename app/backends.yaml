@@ -1,0 +1,9 @@
+backends:
+- name: messages
+  class: B4
+  options: dynamic
+  instances: 15
+- name: contacts
+  class: B4
+  options: dynamic
+  instances: 5

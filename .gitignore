@@ -1,0 +1,30 @@
+*.pyc
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Local files for each set-up #
+###############################
+*.local
+locals.py
+
+# Less files #
+##############
+app/static/less/responsive.css
+app/static/less/utilities.css
+app/static/less/variables.css
+
+# Test data #
+#############
+*.test
+*test_data*

@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Bars</title>
+
+<script type="text/javascript" src="d3.v2.js"></script>
+<style type="text/css">
+		path {
+		    stroke: gray;
+		    stroke-width: 2;
+		    fill: none;
+		}
+
+		line {
+		    stroke: black;
+		}
+		
+		h4 {
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:25px;
+			color:#F60;
+			margin-left:60px;
+		}
+		h5 {
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:16px;
+			color:#CCC;
+			margin-left:60px;
+			
+		}
+		
+		#buttons{margin-left:60px;}
+		
+ 
+ .chart rect {
+   stroke: white;
+   fill: steelblue;
+ }
+ 
+#bar1 rect{
+	 padding-bottom:30px;
+	 
+	 }
+#bar2 rect{
+	padding-top:30px;
+	 
+	 }
+	 
+	
+	</style>
+
+</head>
+
+<body>
+
+
+    
+<script type="text/javascript">
+            
+		
+		
+			/*var data = [4,12,33,42,19,100];*/
+		var data = 
+[{"Year":2008,"Month":4,"From":4,"To":5},
+{"Year":2008,"Month":5,"From":12,"To":13},
+{"Year":2008,"Month":6,"From":12,"To":13},
+{"Year":2008,"Month":7,"From":6,"To":7},
+{"Year":2008,"Month":8,"From":9,"To":12},
+{"Year":2008,"Month":9,"From":10,"To":11},
+{"Year":2008,"Month":10,"From":12,"To":14},
+{"Year":2008,"Month":11,"From":8,"To":11},
+{"Year":2008,"Month":12,"From":5,"To":8},
+{"Year":2009,"Month":1,"From":0,"To":0},
+{"Year":2009,"Month":2,"From":0,"To":0},
+{"Year":2009,"Month":3,"From":0,"To":0},
+{"Year":2009,"Month":4,"From":0,"To":0},
+{"Year":2009,"Month":5,"From":0,"To":1},
+{"Year":2009,"Month":6,"From":0,"To":0},
+{"Year":2009,"Month":7,"From":0,"To":2},
+{"Year":2009,"Month":8,"From":0,"To":0},
+{"Year":2009,"Month":9,"From":0,"To":0},
+{"Year":2009,"Month":10,"From":0,"To":0},
+{"Year":2009,"Month":11,"From":0,"To":0},
+{"Year":2009,"Month":12,"From":0,"To":0},
+{"Year":2010,"Month":1,"From":14,"To":15},
+{"Year":2010,"Month":2,"From":12,"To":14},
+{"Year":2010,"Month":3,"From":14,"To":15},
+{"Year":2010,"Month":4,"From":14,"To":16},
+{"Year":2010,"Month":5,"From":8,"To":10},
+{"Year":2010,"Month":6,"From":10,"To":11},
+{"Year":2010,"Month":7,"From":9,"To":11},
+{"Year":2010,"Month":8,"From":14,"To":16},
+{"Year":2010,"Month":9,"From":19,"To":21},
+{"Year":2010,"Month":10,"From":19,"To":21},
+{"Year":2010,"Month":11,"From":16,"To":18},
+{"Year":2010,"Month":12,"From":9,"To":10},
+{"Year":2011,"Month":1,"From":16,"To":17},
+{"Year":2011,"Month":2,"From":14,"To":15},
+{"Year":2011,"Month":3,"From":0,"To":0},
+{"Year":2011,"Month":4,"From":1,"To":0},
+{"Year":2011,"Month":5,"From":0,"To":0},
+{"Year":2011,"Month":6,"From":0,"To":0},
+{"Year":2011,"Month":7,"From":0,"To":4},
+{"Year":2011,"Month":8,"From":0,"To":0},
+{"Year":2011,"Month":9,"From":0,"To":5},
+{"Year":2011,"Month":10,"From":0,"To":0},
+{"Year":2011,"Month":11,"From":0,"To":0},
+{"Year":2011,"Month":12,"From":0,"To":0},
+{"Year":2012,"Month":1,"From":0,"To":0},
+{"Year":2012,"Month":2,"From":0,"To":0},
+{"Year":2012,"Month":3,"From":0,"To":0},
+{"Year":2012,"Month":4,"From":0,"To":10}];	
+
+
+
+
+var barWidth = 15;
+var width = (barWidth+1) * data.length;
+var height = 300;
+
+var x = d3.scale.linear().domain([0, data.length]).range([0, width]);
+var y = d3.scale.linear().domain([0, d3.max(data, function(datum) { return datum.To; })]).
+  rangeRound([0, height]);
+
+// add the canvas to the DOM
+var bar1 = d3.select("body").
+  append("svg:svg").
+  attr("width", width).
+  attr("height", height);
+
+bar1.selectAll("rect").
+  data(data).
+  enter().
+  append("svg:rect").
+  attr("x", function(datum, index) { return x(index); }).
+  attr("y", function(datum) { return height - y(datum.To); }).
+  attr("rx", 6).
+  attr("ry", 6).
+  attr("height", function(datum) { return y(datum.To); }).
+  attr("width", barWidth).
+  attr("fill", function(d,i) {
+		if(d.Year == 2007){
+			return "#FFFFE8"}
+		if(d.Year == 2008){
+			return "#E0E9D3"}
+		if(d.Year == 2009){
+			return "#C1D3Be"}
+		if(d.Year == 2010){
+			return "#65927E"}	
+		if(d.Year == 2011){
+			return "#84A893"}
+		if(d.Year == 2012){
+			return "#467C69"}
+  }); //how can we do this more elegant?????
+  
+  bar1.selectAll("text").
+  data(data).
+  enter().
+  append("svg:text").
+  attr("x", function(datum, index) { return x(index) + barWidth; }).
+  attr("y", function(datum) 
+  {return height - y(datum.To);} ).
+  attr("dx", -barWidth/2).
+  attr("dy", "1em").
+  attr("text-anchor", "middle").
+  text(function(datum) { return datum.To;}).
+  attr("fill", "red").
+  attr("style", "font-size: 8; font-family: Helvetica, sans-serif");
+  
+  bar1.selectAll("text.xAxis").
+  data(data).
+  enter().append("svg:text").
+  attr("x", function(datum, index) { return x(index) + barWidth; }).
+  attr("y", height).
+  attr("dx", -barWidth/2).
+  attr("text-anchor", "middle").
+  attr("style", "font-size: 12; font-family: Helvetica, sans-serif").
+  text(function(datum) { return datum.Month;}).
+  attr("transform", "translate(0, 5)").
+  attr("fill", "black").
+  attr("class", "xAxis");
+  
+ // SECOND GRAPH
+  
+var x2 = d3.scale.linear().domain([0, data.length]).range([0, width]);
+var y2 = d3.scale.linear().domain([0, d3.max(data, function(datum) { return datum.From; })]).
+  rangeRound([0, height]);
+
+var bar2 = d3.select("body").
+	append("svg:svg").
+	attr("width", width).
+	attr("height", height);
+
+bar2.selectAll("rect").
+  data(data).
+  enter().
+  append("svg:rect").
+  attr("x", function(datum, index) { return x2(index); }).
+  attr("y", 15 ).
+  attr("rx", 6).
+  
+  attr("height", function(datum) { return y(datum.From); }).
+  attr("width", barWidth).
+  attr("fill", "#8CCC90");
+ 
+bar2.selectAll("text").
+  data(data).
+  enter().
+  append("svg:text").
+  attr("x", function(datum, index) { return x(index) + barWidth; }).
+  attr("y", function(datum) { return y(datum.From); }).
+  attr("dx", -barWidth/2).
+  attr("dy", "1em").
+  attr("text-anchor", "middle").
+  text(function(datum) { return datum.From;}).
+  attr("fill", "gray").
+  attr("style", "font-size: 8; font-family: Helvetica, sans-serif");
+
+				
+				
+	
+	
+	
+</script>	
+        
+</body>	
+</html>

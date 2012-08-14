@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>{{ _SITE_NAME }}</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta name="title" content="{{ _SITE_NAME }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <link href="{{ _STATIC_DIR }}/css/bootstrap.css" rel="stylesheet">
+		<link href="{{ _STATIC_DIR }}/css/for_less.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+      /*  padding-top: 60px;*/
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="{{ _STATIC_DIR }}/css/bootstrap-responsive.css" rel="stylesheet">
+		<link href="{{ _STATIC_DIR }}/css/style.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    
+    <!-- jQuery -->
+    <script type="text/javascript" src="{{ _STATIC_DIR }}/js/jquery-1.7.2.min.js"></script>
+    
+    <!-- Mixpanel Flow -->{% if not _DEBUG %}
+    <script type="text/javascript">(function(d,c){var a,b,g,e;a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===d.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';b=d.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);c._i=[];c.init=function(a,d,f){var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";g="disable track track_links track_forms register register_once unregister identify name_tag set_config".split(" ");for(e=0;e<
+g.length;e++)(function(a){b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}})(g[e]);c._i.push([a,d,f])};window.mixpanel=c})(document,[]);
+mixpanel.init("6a67dcf67f5f0f68cebeff3248dc91ae");</script>{% endif %}
+    
+    {% block head %}
+        <!-- more header stuff if necessary -->
+    {% endblock %}
+</head>
+
+<body>
+    {% block content %}
+        <!-- Content goes here! -->
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+#!/bin/bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+"$DIR/gae/dev_appserver.py" "$DIR/app/" $* --use_sqlite --datastore_path="$DIR/data/db.local"
+

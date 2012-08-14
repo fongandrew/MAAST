@@ -1,0 +1,249 @@
+/* required for containers to inherit vertical size from window */
+html,
+body {
+  height: 100%;
+}
+
+#container {
+	border: 1px solid #666;
+	padding: 5px;
+	margin-bottom: 20px;
+	width: 960px;
+	background-image: url('../img/paper.png')
+}
+
+.footer-nav {
+	margin-top: 0 !important;
+}
+
+/* secondary navigation for infographic page */
+.secondNavigation {
+	position:relative;
+	width: 960px;
+}
+
+#stopEditingInfoGraphic {
+	display:none;
+}
+
+#editInfoGraphic {
+	
+}
+
+#printInfoGraphic {
+	
+}
+
+#approvalBox {
+	display:none;
+}
+
+#container_highchart_heading {
+	height: 35px;
+}
+/*
+.element_half{
+	width: 300px;
+  height: 60px;
+  margin: 10px;
+  font-size: 2.0em;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  color: #222;
+
+	-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+			border-radius: 15px;
+}*/
+
+.element {
+  width: 300px;
+/*  height: 140px;*/
+	height:60px;
+  margin: 10px;
+  font-size: 2.0em;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  color: #222;
+
+	-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+			border-radius: 15px;
+/*
+  -webkit-border-top-right-radius: 1.2em;
+      -moz-border-radius-topright: 1.2em;
+          border-top-right-radius: 1.2em;
+*/
+}
+
+.element .date {
+  font-size: 1.25em;
+  font-weight: bold;
+  color: hsla(0,0%,0%,.5);
+  left: 0.5em;
+  top: 0.5em;
+}
+
+.element .subject {
+	font-size: 1.05em;
+	left: 0.5em;
+	top: 1.8em;
+}
+
+.element .message {
+	font-size: .9em;
+	left: 0.5em;
+	top: 4.5em;
+  
+}
+
+.element .num {
+  font-size: 4.25em;
+  font-weight: bold;
+  color: white;
+  left: 0.2em;
+  top: 0.5em;
+}
+
+.element .num_descript{
+  font-size: .05em;
+  right: 0.5em;
+  bottom: 0.5em;
+}
+
+img.closeButton {
+	float: right;
+	display:none;
+}
+
+/* sizes */
+
+.width2 {
+	width: 620px;
+}
+
+.width3 {
+	width: 940px;
+}
+
+.height1{
+	height: 140px;
+}
+.height2 {
+	height: 300px;
+}
+
+.height3 {
+	height: 460px;
+}
+
+.height4 {
+	height: 620px;
+}
+
+.divider {
+  	height: 20px;
+}
+
+/*indivudula into */
+
+.percent {
+	/*background-image:url("../img/back/blue_background.png");*/
+	background-image:url("../img/back/tan_small.png");
+	
+
+}
+
+/* images for prototype */
+
+.email_full{
+	background-image:url("../img/back/dark_green_2.3.png");
+}
+
+.percent {
+	/*background-image:url("../img/back/blue_background.png");*/
+	background-image:url("../img/back/tan_small.png");
+	tan_small.png
+
+}
+
+.banner{
+	background: none;
+}
+
+.last_email{
+	background-image:url("../img/last_email.png");
+}
+
+.num_email {
+	background-image:url("../img/num_emails.png");
+}
+
+.percent_emails {
+	background-image:url("../img/percent_emails.png");
+}
+
+.first_pics{
+	background-image:url("../img/first_pics.png");
+}
+
+.last_pics{
+	background-image:url("../img/last_pics.png");
+}
+
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:         top, left, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+
+/* End: Recommended Isotope styles */
+
+
+
+/* disable CSS transitions for containers with infinite scrolling*/
+.isotope.infinite-scrolling {
+  -webkit-transition: none;
+     -moz-transition: none;
+      -ms-transition: none;
+       -o-transition: none;
+          transition: none;
+}

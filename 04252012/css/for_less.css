@@ -1,0 +1,39 @@
+body{
+	background: url(../img/plaster.png) repeat !important;
+}
+
+.thumbnail{
+	-moz-box-shadow:    3px 3px 2px 3px #ccc;
+  -webkit-box-shadow: 3px 3px 2px 3px #ccc;
+  box-shadow:         3px 3px 2px 3px #ccc;	
+}
+
+.contact_image{
+	width: 96px;
+	height: 96px;
+	padding: 10px;
+}
+
+.contact_frame{
+	width: 116px;
+	height: 116px;
+	margin: 0 auto;
+}
+
+.contact_text {
+/*	position: relative;*/
+/*	margin: auto; */
+	text-align: center;
+}
+
+
+.front_page_banner{
+	
+}
+
+.svg_front_banner{
+	z-index: 0;
+	position: absolute;
+	margin-top: 45px;
+	margin-bottom: 20px;
+}

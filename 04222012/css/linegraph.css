@@ -1,0 +1,19 @@
+/*#container {
+	background-color:#FFFFED;
+	
+		
+	}*/
+	
+body
+
+{
+	width:950px; margin:0 auto; background-color:#ccc;
+	background-image:url(../images/vizulizations_a6_I%20love%20vegtibles.gif);
+	background-repeat:no-repeat;
+	height:2000px;
+	}
+	
+#container_highchart{ 
+			width: 620px;
+			height: 300px;		
+			}

@@ -1,0 +1,239 @@
+<html>
+  <head>
+    <script type="text/javascript" src="d3.v2.js"></script>
+    <style type="text/css">
+    .loader path {
+        stroke: white;
+/*        fill: steelblue;*/
+        padding: 3px;
+        margin: 2px;
+        color: white;
+    }
+    </style>
+  </head>
+  <body>  
+    <div id="DataDisplay"></div>
+    <script type="text/javascript">
+    var temp_data = {
+//      "num_emails":[7046,7176,7102,7008,6972,6510,5866,5317,5150,5136,5120,5076,4922,3995,3418,2851,1956,1543,1531,2776,4240,4073,5070,6433]
+      "num_emails":[704,716,102,708,672,610,566,317,550,536,120,576,422,395,418,251,156,143,131,276,240,473,570,633]
+    };
+    
+    var max_num_emails = Math.max.apply(null, temp_data.num_emails)
+
+    //
+    
+    
+    // Notes:
+    // The *** is because the forum throws away the first space.
+    // My code used an assert method. Instead of adding more code, I documented preconditions.
+
+    /// Utility.
+    ////////////
+
+    /** Clear the data display. */
+    function clearDataDisplay() {
+        var display = d3.select("#DataDisplay");
+        display.selectAll("svg").remove();
+        display.selectAll("div").remove();
+    }
+
+
+    /// A "Loading" Indicator.
+    //////////////////////////
+
+    /** The current loading state. */
+//    var loading = false;
+
+    /** The width for the data display element. */
+    var data_display_width = 600;
+    /** The height for the data display element. */
+    var data_display_height = 600;
+
+    /** Compute a partition of a domain with a "selected" item.
+    *** @param low The domain's lowest value. (pre: low < high)
+    *** @param high The domain's highest value. (pre: low < high)
+    *** @param div The number of partititions. (pre: div > 1)
+    *** @param index The index for the selection. If the index is negative,
+    ***              than an equi-partition is performed. 
+    ***              (pre: index < div)
+    *** @param inflation This factor magnifies the selection. (e.g. 20%
+    ***                  increase in size implies inflation = 1.2)
+    ***                  (pre: inflation > 0)
+    *** @return An array of pairs, where each pair is a region in the
+    ***         partition, everything ordered from low to high. */
+    function computePartition(low, high, div, index, inflation) {
+        // Setup.
+        var delta = high - low;
+        var reg_width = delta / div;
+        var big_width = (index < 0) ? reg_width : inflation * reg_width;
+        reg_width *= (delta - big_width) / (delta - reg_width);
+        index = (index < 0) ? 0 : index;
+
+        // Partition.
+        var data = new Array(div);
+        var anchor = reg_width * index + low;
+        data[index] = [ anchor, anchor + big_width ];
+        for (var i = index + 1; i < div; i++) {
+            anchor = data[i - 1][1];
+            data[i] = [ anchor, anchor + reg_width ];
+        }
+        for (var i = index - 1; i >= 0; i--) {
+            anchor = data[i + 1][0];
+            data[i] = [ anchor - reg_width, anchor ];
+        }
+
+        return data;
+    }
+
+    /** Create an arc-radial svg chunk.
+    *** @param index The index for the selected chunk. 
+    ***              (assert 0 < index < 16) 
+    *** @param r1 The inner-radius for the chunk.
+    *** @param r2 The outer-radius for the chunk.
+    *** @return The created svg chunk. */
+    function createChunk(index, r1) {
+        // Setup with partition of [0, 2 * PI].
+        var inflation = 1.1;
+       var chunk_count = 24;
+        var partition = 
+            computePartition(0, 2 * Math.PI, chunk_count, index, inflation);
+
+        // Create closures for anonymous functions.
+        function startAngleClosure(list) {
+            return function (d, i) { return list[i][0]; };
+        }
+        function endAngleClosure(list) {
+            return function (d, i) { return list[i][1]; };
+        }
+        function outerRadiusClosure(r1) {
+            return function (d, i) { // Create the chunk. 
+              return r1 + Math.ceil(d/max_num_emails*200); };
+        }
+        
+        var chunk = d3.svg.arc()
+            .startAngle(startAngleClosure(partition))
+            .endAngle(endAngleClosure(partition))
+            .innerRadius(r1)
+            .outerRadius(outerRadiusClosure(r1));
+
+        return chunk;
+    }
+
+    /** Continue the loading animation.
+    *** @param r1 The chunk's normal inner radius.
+    *** @param r2 The chunk's normal outer radius. */
+    function loadContinue(r1, r2) {
+        var dead_time = 250; // ms
+
+        function loadContinueRec() {
+            // Remember which chunk is the big one.
+            if (typeof loadContinueRec.index == "undefined")
+                loadContinueRec.index = -1;
+            if (++loadContinueRec.index > 15)
+                loadContinueRec.index = 0;
+
+            // Transform.
+            if (loading) {
+                var chunk = createChunk(loadContinueRec.index, r1, r2);
+                var chunks = d3.select("#DataDisplay").selectAll(".chunk");
+                chunks.transition()
+                    .duration(dead_time)
+                    .attr("d", chunk);
+                setTimeout(loadContinueRec, dead_time);
+            } 
+        }
+        loadContinueRec();
+    }
+
+    /** Start the loading widget. */
+    function loadStart() {
+        // Setup.
+        var size = Math.min(data_display_width, data_display_height);
+        var center = "(" + size / 2 + ", " + size / 2 + ")";
+        var inner_radius = 75;
+        loading = true;
+        clearDataDisplay();
+
+        // Shape templates.
+        // outer circle
+        var outer_chunk = createChunk(-1, inner_radius);
+        
+        // Construct the graphics for the loader.
+        var loader = d3.select("#DataDisplay").append("svg")
+            .attr("class", "loader")
+            .attr("width", size)
+            .attr("height", size)
+            .append("g")
+                .attr("transform", "translate" + center);
+
+        //draw the outer circle
+        var chunks = loader.selectAll("path")
+            .data(temp_data.num_emails) //load the data
+            .enter().append("path")
+                .attr("class", "chunk")
+                .attr("d", outer_chunk)
+                .style("fill", function(d,i) { //am:1, pm:2
+                    if(i<12)
+                    {
+                      return ("#F2BC1B");
+                    }else{
+                      return ("#276654");
+                    }
+                  });
+        
+        loader.selectAll("text")
+        .data(temp_data.num_emails)
+        .enter().append("svg:text")
+          .attr("x", function(d,i) {
+              var x_margin=0;
+              if(i>=12 & i<18){
+                x_margin = -25;
+              }
+              if(i>=18 & i<24){
+                x_margin = -25;
+              }
+              var this_radius = inner_radius + Math.ceil(d/max_num_emails*200);
+              return this_radius*Math.cos(i*Math.PI/12-Math.PI/2+Math.PI/24)+x_margin;
+            })
+          .attr("y", function(d,i) {
+              var y_margin=0;
+              var this_radius = inner_radius + Math.ceil(d/max_num_emails*200);
+              if(i>=6 & i<12){
+                y_margin = 10;
+              }
+              if(i>=12 & i<18){
+                y_margin = 10;
+              }
+              if(i>=18 & i<24){
+                y_margin = -5;
+              }              
+              return this_radius*Math.sin(i*Math.PI/12-Math.PI/2+Math.PI/24)+y_margin;
+            })
+          .text(function(d) {return d;})
+          .style("font-size",12);
+          
+        //draw the inner circle
+        var inner_circle = loader.append("svg:image")
+            .attr("xlink:href", "sunburst_center_150.png")
+            .attr("x", inner_radius*-1)
+            .attr("y", inner_radius*-1)
+            .attr("width", inner_radius*2)
+            .attr("height", inner_radius*2)
+//        var circle = loader.append("path")
+//            .attr("d", inner_circle);
+
+        // Start transition-callback loop.
+        //loadContinue(r2, r3);
+    }
+
+    /** Stop the loading widget. */
+    function loadStop() {
+        loading = false;
+        // Fade away?
+    }    
+    
+    loadStart()
+    </script>
+  </body>
+</html>

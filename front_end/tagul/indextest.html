@@ -1,0 +1,52 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!--
+To host this cloud on your site make the following replacements:
+http://cdn.tagul.com/clouds/demo@demo -> http://<your site>/myCloud.svgz (file that was received through API)
+http://cdn.tagul.com/tagul.swf -> http://<your site>/tagul.swf
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+   <head>
+      <title>Test cloud</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+      <style type="text/css" media="screen">
+         body {
+            margin: 0px 0px;
+            padding: 0px;
+            text-align: center;
+         }
+            
+         #myCloud {
+            width: 600px;
+            margin: 0px auto;
+            text-align: left;
+            padding: 15px;
+         }
+      </style>
+   </head>
+   <body >
+      <div id="myCloud">
+         <object
+            width="600"
+            height="600"
+            type="application/xshockwave-flash"
+            data="tagul.swf">
+               <param name="movie" value="tagul.swf"/>
+               <param name="flashvars" value="myCloud.svg"/>
+               <param name="allowscriptaccess" value="always"/>
+               <param name="swfversion" value="10"/>
+               <param name="expressinstall" value="http://cdn.tagul.com/expressInstall.swf"/>
+               <param name="wmode" value="transparent"/>
+               <!--Embed svg if no flash installed-->
+               <object data="myCloud.svg" type="image/svg+xml" width="600" height="600">
+                  <p><a href="http://www.adobe.com/go/getflashplayer">
+                     <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+                  </a></p>
+               </object>
+         </object>
+      </div>
+   </body>
+</html>

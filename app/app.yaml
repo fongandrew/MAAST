@@ -1,0 +1,25 @@
+application: masta-dev
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /static
+  static_dir: static
+  
+- url: /files/.*
+  script: helpers.blobs.app
+
+- url: /test.*
+  script: test_handler.app
+
+- url: /fetch/.*
+  script: fetching.app
+
+- url: /.*
+  script: main.app
+
+libraries:
+- name: jinja2
+  version: 2.6

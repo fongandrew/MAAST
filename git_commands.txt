@@ -1,0 +1,14 @@
+# Get latest updates
+git pull origin master
+
+# Stage a file to commit
+git add file
+
+# Commit (save LOCAL changes)
+git commit -m "Explanation"
+
+# Commit all changed files (that have already been added)
+git commit -a -m "Explanation"
+
+# Push to server
+git push origin msater

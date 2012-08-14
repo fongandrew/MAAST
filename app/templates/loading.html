@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+<div class="row">
+	<div class=" span1">
+		<a href="/index"><img src="{{ _STATIC_DIR }}/img/banners/index_logo.png" class="loading_logo"></a>	
+	</div>
+</div>
+
+    <div id="loading" style="width:500px; text-align:center; margin: 100px auto 0px auto;">
+				<div style="height: 80px; >
+	        <span id="loading_txt">Loading ..</span>
+	        <div id="message">
+	            <div class="date"></div>
+	            <div class="from"></div>
+	            <div class="subject"></div>
+	        </div>
+	        <div id="contact">
+	        </div>
+	        <br />
+				</div>
+        <div id="progress_bar_container" style="background:#FFFFE8">
+            <div id="progress_bar" style="color:#aaf; background:#276654; width: 1px;">
+                <!-- * is to force div to expand on certain browsers -->
+                <span style="visibility:hidden">*</span>
+            </div>
+        </div>
+        <div id="progress_text">
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        message_buffer = [];
+        oldest = new Date();
+        $('#contact').hide()
+        
+        function update_loading_msg() {
+            buffer = message_buffer;
+            if (buffer.length) {
+                $('#loading_txt').text('')
+                $('#message').show()
+                msg = buffer[0];
+                buffer.splice(0, 1);
+                
+                from_str = "<" + msg.from.email + ">";
+                if (msg.from.name) {
+                    from_str = msg.from.name + " " + from_str;
+                }
+                $('#loading .from').text(from_str);
+                
+                date_str = msg.date.toISOString();
+                $('#loading .date').text(date_str);
+                
+                link = "<a href=\"https://mail.google.com/mail/ca/u/0/#all/"
+                link = link + msg.gmail_message_id + "\">"
+                link = link + msg.subject + "</a>"
+                $('#loading .subject').html(link);
+            }
+        }
+        updateMsgInterval = setInterval("update_loading_msg()", 1000);
+        
+        function update_progress(processed, total) {
+            if (!total) {
+                ptext = "Calculating total number of messages. ";
+                ptext = ptext + processed + " processed so far.";
+            } else {
+                ptext = "~" + processed + " / " + total + " messages processed";
+                percentage = parseInt(processed) / parseInt(total)
+                total_width = $('#progress_bar_container').width()
+                bar_width = parseInt(percentage * total_width)
+                $('#progress_bar').width(bar_width);
+            }
+            $('#progress_text').text(ptext);
+        }
+        
+        function update_progress_contact(contact) {
+            number = parseInt(contact.number) + 1
+            contact_text = "Generating for contact #" + number + " - " + contact.email
+            total_width = $('#progress_bar_container').width()
+            $('#progress_bar').width(total_width);
+            $('#contact').html(contact_text)
+            $('#contact').show()
+            $('#message').hide()
+        }
+        
+        function update_buffer() {
+            $.getJSON("{{ status_url }}",
+                function(data) {
+                    if (data.viz_complete) {
+                        // Done => reload page
+                        location.reload();
+                    }
+                    
+                    if (data.current_contact) {
+                        update_progress_contact(data.current_contact)
+                    } else {
+                        update_progress(data.messages_processed,
+                                        data.total_messages);
+                        messages = data.messages;
+                        messages.reverse();
+                        for (index in messages) {
+                            msg = messages[index]
+                            msg.date = new Date(msg.date);
+                            if (msg.date < oldest) {
+                                message_buffer.push(msg);
+                                oldest = msg.date;
+                            }
+                        }
+                    }
+                    setTimeout("update_buffer()", 5000)
+                
+                // If error, try again after a slightly longer period
+                }).error(function() {
+                    setTimeout("update_buffer()", 10000)
+                })
+        }
+        
+        update_buffer();
+    </script>
+{% endblock %}

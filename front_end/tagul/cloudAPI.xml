@@ -1,0 +1,242 @@
+<tagul>
+  <head>
+    <!--
+      shape types list:
+      cloud
+      heart
+      star
+      triangle
+      pentagram
+      circle
+      rectangle
+    -->
+    <shape type="heart" angle="0" ratio="1"/>
+
+    <fonts>
+      <!-- fonts list: 
+      <font>BPreplay Bold/>
+      <font>BPreplay Bold Italic</font>
+      <font>BPreplay Italic</font>
+      <font>BPreplay Regular</font>
+      <font>Breip Medium</font>
+      <font>Duality Regular</font>
+      <font>Goudy Bookletter 1911 Regular</font>
+      <font>Gunplay Regular</font>
+      <font>Heuristica Bold</font>
+      <font>Heuristica BoldItalic</font>
+      <font>Heuristica Italic</font>
+      <font>Heuristica Regular</font>
+      <font>League Gothic Regular</font>
+      <font>Linux Biolinum Bold</font>
+      <font>Linux Biolinum Regular</font>
+      <font>Linux Libertine Bold</font>
+      <font>Linux Libertine Bold Italic</font>
+      <font>Linux Libertine C Regular</font>
+      <font>Linux Libertine Italic</font>
+      <font>Linux Libertine Regular</font>
+      <font>Loved by the King Regular</font>
+      <font>Mail Ray Stuff Regular</font>
+      <font>Teen bold</font>
+      <font>Teen bold Italic</font>
+      <font>Teen Italic</font>
+      <font>Teen Regular</font>
+      <font>TeX Gyre Bonum Bold</font>
+      <font>TeX Gyre Bonum Bold Italic</font>
+      <font>TeX Gyre Bonum Italic</font>
+      <font>TeX Gyre Bonum Regular</font>-->
+      <font>Linux Libertine Regular</font>
+    </fonts>
+    <colors>
+      <color>000000</color>
+      <color>CF7B79</color>
+      <color>7202E4</color>
+      <color>A7ACC8</color>
+      <color>240279</color>
+      <color>C850C4</color>
+    </colors>
+    <angles>
+      <angle>0</angle>
+      <angle>90</angle>
+    </angles>
+    <styleOptions>
+      <backgroundColor>FFFFFF</backgroundColor>
+      <animationSpeed>0.15</animationSpeed>
+      <textColor>FFFFFF</textColor>
+      <textAlpha>1</textAlpha>
+      <boxColor>9966FF</boxColor>
+      <boxAlpha>0.75</boxAlpha>
+      <zoom>1</zoom>
+      <rotate>1</rotate>
+    </styleOptions>
+  </head>
+  <tags>
+    <tag weight="100" url="http://tagul.com" color="3488BF" font="Linux Libertine Regular" angle="0">Tagul</tag>
+    <tag weight="25" url="http://google.com/search?q=mythology">mythology</tag>
+    <tag weight="25" url="http://google.com/search?q=children">children</tag>
+    <tag weight="25" url="http://google.com/search?q=lemonade">lemonade</tag>
+    <tag weight="25" url="http://google.com/search?q=compression">compression</tag>
+    <tag weight="25" url="http://google.com/search?q=usa">usa</tag>
+    <tag weight="25" url="http://google.com/search?q=Lemon">Lemon</tag>
+    <tag weight="25" url="http://google.com/search?q=out">out</tag>
+    <tag weight="25" url="http://google.com/search?q=darkness">darkness</tag>
+    <tag weight="25" url="http://google.com/search?q=Brain">Brain</tag>
+    <tag weight="24" url="http://google.com/search?q=%d1%80%d0%be%d1%81%d1%81%d0%b8%d1%8f">россия</tag>
+    <tag weight="24" url="http://google.com/search?q=puppy">puppy</tag>
+    <tag weight="24" url="http://www.djangoproject.com/">django</tag>
+    <tag weight="24" url="http://google.com/search?q=customers">customers</tag>
+    <tag weight="23" url="http://google.com/search?q=Mask">Mask</tag>
+    <tag weight="23" url="http://google.com/search?q=full+moon">full moon</tag>
+    <tag weight="23" url="http://google.com/search?q=bus">bus</tag>
+    <tag weight="23" url="http://google.com/search?q=html">html</tag>
+    <tag weight="23" url="http://google.com/search?q=Internet">Internet</tag>
+    <tag weight="22" url="http://google.com/search?q=zombies">zombies</tag>
+    <tag weight="22" url="http://google.com/search?q=bored">bored</tag>
+    <tag weight="22" url="http://google.com/search?q=yarn">yarn</tag>
+    <tag weight="22" url="http://google.com/search?q=career">career</tag>
+    <tag weight="22" url="http://google.com/search?q=pen">pen</tag>
+    <tag weight="22" url="http://google.com/search?q=computers">computers</tag>
+    <tag weight="22" url="http://google.com/search?q=Black">Black</tag>
+    <tag weight="21" url="http://google.com/search?q=potato">potato</tag>
+    <tag weight="21" url="http://google.com/search?q=Pills">Pills</tag>
+    <tag weight="21" url="http://google.com/search?q=bank">bank</tag>
+    <tag weight="21" url="http://google.com/search?q=One">One</tag>
+    <tag weight="21" url="http://google.com/search?q=investments">investments</tag>
+    <tag weight="21" url="http://google.com/search?q=Green">Green</tag>
+    <tag weight="21" url="http://google.com/search?q=%d1%81%d1%82%d0%b0%d1%80%d1%82%d0%b0%d0%bf">стартап</tag>
+    <tag weight="21" url="http://google.com/search?q=web">web</tag>
+    <tag weight="21" url="http://google.com/search?q=%d0%b3%d0%b0%d0%b3%d0%b0%d1%80%d0%b8%d0%bd">гагарин</tag>
+    <tag weight="21" url="http://google.com/search?q=paper">paper</tag>
+    <tag weight="20" url="http://google.com/search?q=book">book</tag>
+    <tag weight="20" url="http://google.com/search?q=anger">anger</tag>
+    <tag weight="20" url="http://google.com/search?q=Pencil">Pencil</tag>
+    <tag weight="20" url="http://google.com/search?q=read">read</tag>
+    <tag weight="19" url="http://google.com/search?q=tricycle">tricycle</tag>
+    <tag weight="19" url="http://kernel.org/">linux</tag>
+    <tag weight="19" url="http://google.com/search?q=super">super</tag>
+    <tag weight="19" url="http://google.com/search?q=ugly">ugly</tag>
+    <tag weight="19" url="http://google.com/search?q=Japan">Japan</tag>
+    <tag weight="19" url="http://google.com/search?q=site">site</tag>
+    <tag weight="18" url="http://google.com/search?q=Chocolate">Chocolate</tag>
+    <tag weight="18" url="http://google.com/search?q=money">money</tag>
+    <tag weight="18" url="http://google.com/search?q=danger">danger</tag>
+    <tag weight="18" url="http://google.com/search?q=White">White</tag>
+    <tag weight="18" url="http://google.com/search?q=widget">widget</tag>
+    <tag weight="18" url="http://google.com/search?q=Penguin">Penguin</tag>
+    <tag weight="18" url="http://google.com/search?q=Mint">Mint</tag>
+    <tag weight="18" url="http://google.com/search?q=Low">Low</tag>
+    <tag weight="17" url="http://google.com/search?q=roof">roof</tag>
+    <tag weight="17" url="http://google.com/search?q=venture">venture</tag>
+    <tag weight="17" url="http://google.com/search?q=favorites">favorites</tag>
+    <tag weight="17" url="http://google.com/search?q=nose">nose</tag>
+    <tag weight="17" url="http://google.com/search?q=sun">sun</tag>
+    <tag weight="17" url="http://google.com/search?q=clients">clients</tag>
+    <tag weight="17" url="http://google.com/search?q=dog">dog</tag>
+    <tag weight="16" url="http://google.com/search?q=ocean">ocean</tag>
+    <tag weight="16" url="http://google.com/search?q=Handle">Handle</tag>
+    <tag weight="16" url="http://google.com/search?q=Pink">Pink</tag>
+    <tag weight="15" url="http://google.com/search?q=find">find</tag>
+    <tag weight="15" url="http://google.com/search?q=venture">venture</tag>
+    <tag weight="15" url="http://google.com/search?q=life">life</tag>
+    <tag weight="15" url="http://google.com/search?q=%d1%80%d0%be%d1%81%d1%81%d0%b8%d1%8f">россия</tag>
+    <tag weight="15" url="http://google.com/search?q=customers">customers</tag>
+    <tag weight="15" url="http://google.com/search?q=hate+microsoft">hate microsoft</tag>
+    <tag weight="15" url="http://google.com/search?q=run">run</tag>
+    <tag weight="14" url="http://google.com/search?q=sky">sky</tag>
+    <tag weight="14" url="http://google.com/search?q=fun">fun</tag>
+    <tag weight="14" url="http://google.com/search?q=software">software</tag>
+    <tag weight="14" url="http://google.com/search?q=wmd">wmd</tag>
+    <tag weight="14" url="http://google.com/search?q=Internet">Internet</tag>
+    <tag weight="14" url="http://google.com/search?q=tomato">tomato</tag>
+    <tag weight="14" url="http://google.com/search?q=SAAS">SAAS</tag>
+    <tag weight="14" url="http://google.com/search?q=tag">tag</tag>
+    <tag weight="14" url="http://google.com/search?q=Orient">Orient</tag>
+    <tag weight="14" url="http://google.com/search?q=%d1%81%d1%82%d0%b0%d1%80%d1%82%d0%b0%d0%bf">стартап</tag>
+    <tag weight="14" url="http://google.com/search?q=life">life</tag>
+    <tag weight="14" url="http://google.com/search?q=bloody">bloody</tag>
+    <tag weight="13" url="http://google.com/search?q=framework">framework</tag>
+    <tag weight="13" url="http://google.com/search?q=Door">Door</tag>
+    <tag weight="13" url="http://google.com/search?q=type">type</tag>
+    <tag weight="13" url="http://google.com/search?q=firefox">firefox</tag>
+    <tag weight="13" url="http://google.com/search?q=chocolate">chocolate</tag>
+    <tag weight="13" url="http://google.com/search?q=Dragon">Dragon</tag>
+    <tag weight="13" url="http://google.com/search?q=Cellphone">Cellphone</tag>
+    <tag weight="13" url="http://google.com/search?q=startup">startup</tag>
+    <tag weight="13" url="http://google.com/search?q=vodka">vodka</tag>
+    <tag weight="13" url="http://google.com/search?q=china">china</tag>
+    <tag weight="13" url="http://kernel.org/">linux</tag>
+    <tag weight="13" url="http://google.com/search?q=job">job</tag>
+    <tag weight="13" url="http://google.com/search?q=fair">fair</tag>
+    <tag weight="13" url="http://google.com/search?q=%d0%bb%d1%83%d0%bd%d0%b0">луна</tag>
+    <tag weight="13" url="http://google.com/search?q=%d0%ba%d0%be%d1%81%d0%bc%d0%be%d1%81">космос</tag>
+    <tag weight="12" url="http://google.com/search?q=tag">tag</tag>
+    <tag weight="12" url="http://google.com/search?q=%d0%bb%d1%83%d0%bd%d0%b0">луна</tag>
+    <tag weight="12" url="http://google.com/search?q=%d0%ba%d0%be%d1%81%d0%bc%d0%be%d1%81">космос</tag>
+    <tag weight="12" url="http://google.com/search?q=software">software</tag>
+    <tag weight="12" url="http://google.com/search?q=Color">Color</tag>
+    <tag weight="12" url="http://google.com/search?q=pizza">pizza</tag>
+    <tag weight="11" url="http://google.com/search?q=gothic">gothic</tag>
+    <tag weight="11" url="http://google.com/search?q=murder">murder</tag>
+    <tag weight="11" url="http://google.com/search?q=%d0%bc%d0%b5%d0%b4%d0%b2%d0%b5%d0%b4%d1%8c">медведь</tag>
+    <tag weight="11" url="http://google.com/search?q=usa">usa</tag>
+    <tag weight="11" url="http://www.wordpress.com">wordpress</tag>
+    <tag weight="11" url="http://google.com/search?q=SAAS">SAAS</tag>
+    <tag weight="11" url="http://google.com/search?q=High">High</tag>
+    <tag weight="11" url="http://google.com/search?q=Knob">Knob</tag>
+    <tag weight="11" url="http://google.com/search?q=farm">farm</tag>
+    <tag weight="11" url="http://google.com/search?q=Speaker">Speaker</tag>
+    <tag weight="11" url="http://google.com/search?q=Knife">Knife</tag>
+    <tag weight="10" url="http://google.com/search?q=Light">Light</tag>
+    <tag weight="10" url="http://google.com/search?q=startup">startup</tag>
+    <tag weight="10" url="http://google.com/search?q=Wood">Wood</tag>
+    <tag weight="10" url="http://google.com/search?q=Love">Love</tag>
+    <tag weight="10" url="http://google.com/search?q=Cat">Cat</tag>
+    <tag weight="10" url="http://google.com/search?q=georgeous">georgeous</tag>
+    <tag weight="10" url="http://google.com/search?q=pencil">pencil</tag>
+    <tag weight="10" url="http://google.com/search?q=broken">broken</tag>
+    <tag weight="10" url="http://google.com/search?q=%d0%b3%d0%b0%d0%b3%d0%b0%d1%80%d0%b8%d0%bd">гагарин</tag>
+    <tag weight="10" url="http://google.com/search?q=service">service</tag>
+    <tag weight="10" url="http://google.com/search?q=career">career</tag>
+    <tag weight="10" url="http://google.com/search?q=cloud">cloud</tag>
+    <tag weight="10" url="http://google.com/search?q=money">money</tag>
+    <tag weight="10" url="http://google.com/search?q=html">html</tag>
+    <tag weight="9" url="http://google.com/search?q=fun">fun</tag>
+    <tag weight="9" url="http://google.com/search?q=hippo">hippo</tag>
+    <tag weight="9" url="http://google.com/search?q=service">service</tag>
+    <tag weight="9" url="http://google.com/search?q=flag">flag</tag>
+    <tag weight="9" url="http://google.com/search?q=opera">opera</tag>
+    <tag weight="9" url="http://google.com/search?q=fallen">fallen</tag>
+    <tag weight="9" url="http://google.com/search?q=vodka">vodka</tag>
+    <tag weight="8" url="http://google.com/search?q=europe">europe</tag>
+    <tag weight="8" url="http://google.com/search?q=computers">computers</tag>
+    <tag weight="8" url="http://www.ubuntu.com/">ubuntu</tag>
+    <tag weight="8" url="http://google.com/search?q=job">job</tag>
+    <tag weight="8" url="http://google.com/search?q=web">web</tag>
+    <tag weight="8" url="http://google.com/search?q=beer">beer</tag>
+    <tag weight="8" url="http://google.com/search?q=Dark">Dark</tag>
+    <tag weight="8" url="http://google.com/search?q=development">development</tag>
+    <tag weight="8" url="http://google.com/search?q=cruel">cruel</tag>
+    <tag weight="8" url="http://www.google.com">google</tag>
+    <tag weight="8" url="http://www.ubuntu.com/">ubuntu</tag>
+    <tag weight="7" url="http://google.com/search?q=cloud">cloud</tag>
+    <tag weight="7" url="http://google.com/search?q=Dog">Dog</tag>
+    <tag weight="7" url="http://google.com/search?q=coconut">coconut</tag>
+    <tag weight="7" url="http://google.com/search?q=europe">europe</tag>
+    <tag weight="7" url="http://google.com/search?q=Brush">Brush</tag>
+    <tag weight="7" url="http://google.com/search?q=early+riser">early riser</tag>
+    <tag weight="7" url="http://www.wordpress.com">wordpress</tag>
+    <tag weight="6" url="http://google.com/search?q=development">development</tag>
+    <tag weight="6" url="http://google.com/search?q=bank">bank</tag>
+    <tag weight="6" url="http://google.com/search?q=georgeous">georgeous</tag>
+    <tag weight="6" url="http://google.com/search?q=hit">hit</tag>
+    <tag weight="6" url="http://google.com/search?q=early+riser">early riser</tag>
+    <tag weight="6" url="http://google.com/search?q=speaker">speaker</tag>
+    <tag weight="6" url="http://google.com/search?q=investments">investments</tag>
+    <tag weight="6" url="http://google.com/search?q=opera">opera</tag>
+    <tag weight="5" url="http://google.com/search?q=%d0%bc%d0%b5%d0%b4%d0%b2%d0%b5%d0%b4%d1%8c">медведь</tag>
+    <tag weight="5" url="http://google.com/search?q=firefox">firefox</tag>
+    <tag weight="5" url="http://google.com/search?q=site">site</tag>
+    <tag weight="5" url="http://google.com/search?q=china">china</tag>
+    <tag weight="5" url="http://google.com/search?q=clients">clients</tag>
+    <tag weight="5" url="http://google.com/search?q=widget">widget</tag>
+  </tags>
+</tagul>

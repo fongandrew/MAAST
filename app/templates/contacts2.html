@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for contact in contacts %}
+        <a href="{{ url_for_contact(contact) }}">
+            {{ contact.name }} &lt;{{ contact.email }}&gt;
+        </a> - 
+        {{ contact.total_emails }}
+        <br />
+    {% endfor %}
+
+{% endblock %}

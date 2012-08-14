@@ -1,0 +1,17 @@
+My letter is {{ letter }}.<br />
+
+<br />
+<br />
+
+The turtles are ... <br />
+{% for turtle in turtles %}
+    {{ turtle }}
+    {% if turtle == 'Donnie' %}, my favorite{% endif %}
+    <br />
+{% endfor %}
+<br />
+<br />
+Fido is {{ dogs['Fido']['color'] }}.
+<br />
+<!-- This also works -->
+Fido is {{ dogs.Fido.color }}.
